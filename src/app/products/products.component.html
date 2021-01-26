@@ -1,7 +1,7 @@
 <section class="products">
     <div *ngFor="let product of products" class="product-card">
       <div class="product-image">
-        <img src={{product.image}}/>
+        <img [src]=product.image/>
       </div>
       <div class="product-info">
         <h5>{{product.title}}</h5>
