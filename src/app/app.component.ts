@@ -9,6 +9,8 @@ export class AppComponent {
   title = 'Maimon Shop';
   msg = "";
 
+  selectedCategory = "";
+
   buyItem(){
     this.msg = (this.msg ? "" : "Thank you for your order!");
   }

@@ -1,4 +1,5 @@
 import { Products } from './products';
+import Utils from './utils'
 
 export const PRODUCTS: Products[] = [
     {
@@ -143,3 +144,5 @@ export const PRODUCTS: Products[] = [
         "image": "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg"
     }
 ];
+
+export const CATEGORIES = Object.keys(Utils.groupBy(PRODUCTS, 'category'));

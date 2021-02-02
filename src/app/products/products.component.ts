@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { PRODUCTS } from '../mock-products';
 
 @Component({
@@ -7,6 +7,8 @@ import { PRODUCTS } from '../mock-products';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
+
+  @Input()  filterByCategory: string = "";
 
   products = PRODUCTS;
   
