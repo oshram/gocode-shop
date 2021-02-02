@@ -6,12 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Maimon Shop';
-  msg = "";
-
+  
   selectedCategory = "";
 
-  buyItem(){
-    this.msg = (this.msg ? "" : "Thank you for your order!");
-  }
 }
