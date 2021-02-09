@@ -1,6 +1,6 @@
 <section class="products">
     <ng-container *ngFor="let product of products">
-      <div class="product-card" *ngIf="!filterByCategory || filterByCategory == product.category">
+      <div (click)="onClick(product)" class="product-card" *ngIf="!filterByCategory || filterByCategory == product.category">
         <div class="product-image">
           <img [src]="product.image"/>
         </div>

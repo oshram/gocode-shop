@@ -10,9 +10,11 @@ import { CATEGORIES } from '../mock-products';
 export class HeaderComponent implements OnInit {
 
   @Output() filterCatChange = new EventEmitter<string>();
+  @Output() sortByChange = new EventEmitter<string>();
 
   categories = CATEGORIES;
   selectCat = "";
+  selectSort = "fav";
   
   constructor() {}
 
@@ -23,4 +25,7 @@ export class HeaderComponent implements OnInit {
     this.filterCatChange.emit(this.selectCat);
   }
 
+  sortBy(){
+    this.sortByChange.emit(this.selectSort);
+  }
 }

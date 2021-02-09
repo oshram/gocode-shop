@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import {FormsModule} from '@angular/forms';
 import { ProductsComponent } from './products/products.component';
 import { HeaderComponent } from './header/header.component';
+import { MessageComponent } from './message/message.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
-    HeaderComponent
+    HeaderComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,

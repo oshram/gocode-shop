@@ -9,4 +9,6 @@ export class AppComponent {
   
   selectedCategory = "";
 
+  selectedSortBy = "";
+
 }
