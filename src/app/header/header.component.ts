@@ -1,5 +1,6 @@
 import { Component, OnInit,Output, EventEmitter } from '@angular/core';
-import { CATEGORIES } from '../mock-products';
+import { CATEGORIES, SORTS } from '../mock-products';
+import { Sorts } from "../sort"
 
 
 @Component({
@@ -10,11 +11,12 @@ import { CATEGORIES } from '../mock-products';
 export class HeaderComponent implements OnInit {
 
   @Output() filterCatChange = new EventEmitter<string>();
-  @Output() sortByChange = new EventEmitter<string>();
+  @Output() sortByChange = new EventEmitter<number>();
 
+  sortList: Sorts[] = SORTS;
   categories = CATEGORIES;
   selectCat = "";
-  selectSort = "fav";
+  selectSort: number = 0;
   
   constructor() {}
 

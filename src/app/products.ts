@@ -5,8 +5,8 @@ export interface Products {
     price: number;
     category: string;
     image:  string;
-    // isFavorite: boolean;
-    // sellNo: number;
-    // openDate: number;
+    isFavorite: number;
+    sellNo: number;
+    openDate: number;
   }
   

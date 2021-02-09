@@ -13,7 +13,7 @@ export class ProductService {
   constructor(private messageService: MessageService) { }
 
   getProducts(): Observable<Products[]> {
-    this.messageService.add('ProductService: fetched products');
+    this.messageService.console('ProductService: fetched products');
     return of(PRODUCTS);
   }
   

@@ -1,7 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Products } from "../products"
 import { ProductService } from '../product.service';
 import { MessageService } from '../message.service';
+import { Products } from "../products"
+import { SORTS } from '../mock-products';
+import { Sorts } from "../sort"
+import Utils from '../utils'
+
 
 @Component({
   selector: 'app-products',
@@ -11,14 +15,24 @@ import { MessageService } from '../message.service';
 export class ProductsComponent implements OnInit {
 
   @Input()  filterByCategory: string = "";
-  @Input()  sortBy: string = "";
+  // @Input()  sortBy: string = "";
 
-  products?: Products[];
+  products: Products[] = [];
+  sortList: Sorts[] = SORTS;
+  selectedProduct : number = 0;
+
+  private _sortBy: number = 0;
+    
+  @Input() set sortBy(value: number) {
+      this._sortBy = value;
+      this.sortProduct(value);
+  }
   
   constructor(private productService : ProductService, private messageService : MessageService) { }
 
   ngOnInit(): void {
     this.getProducts();
+    this.sortProduct(0);
   }
 
   getProducts(): void {
@@ -27,7 +41,20 @@ export class ProductsComponent implements OnInit {
   }
 
   onClick(product: Products): void {
-    this.messageService.add(`ProductsComponent: Selected product id=${product.id}`);
+    this.selectedProduct = product.id;
+    this.messageService.console(`ProductsComponent: Selected product id=${product.id}`);
+    this.messageService.dom(`${product.title} - Price: ${product.price}$ \n\n ${product.description}`);
+  }
+
+  private sortProduct(sortIndex : number){
+    
+    let sortObj = this.sortList[sortIndex];
+    if (sortObj.type == "number"){
+      this.products = Utils.sortNumber(this.products, sortObj.key, sortObj.desc);
+    }else{
+      this.products = Utils.sortString(this.products, sortObj.key, sortObj.desc);
+    }
+    
   }
 
 }

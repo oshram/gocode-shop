@@ -7,8 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   
-  selectedCategory = "";
-
-  selectedSortBy = "";
-
+  selectedCategory: string = "";
+  selectedSortBy: number = 0;
 }
