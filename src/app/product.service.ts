@@ -15,13 +15,13 @@ export class ProductService {
   constructor(private messageService: MessageService) { }
 
   getProducts(): Observable<Products[]> {
-    this.messageService.console('ProductService: fetched products');
+    this.messageService.add('ProductService: fetched products');
     this.productLength = PRODUCTS.length;
     return of(PRODUCTS);
   }
 
   getProduct(id: number): Observable<Products> {
-    this.messageService.console(`ProductService: fetched product id=${id}`);
+    this.messageService.add(`ProductService: fetched product id=${id}`);
     this.productLength = PRODUCTS.length;
     return of(PRODUCTS.find(product => product.id === id));
   }

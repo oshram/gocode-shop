@@ -1,5 +1,8 @@
 <section class="product">
-      <div class="product-card one">
+  <span class="link" routerLink=''>Product</span> 
+  <span> > Product Details > {{ id }}</span>  
+  <button class="backBtn" (click)="goBack()">Back</button>
+  <div class="product-card one">
         <button *ngIf="id > 1" (click)="goProdact('prev')"><</button>
         <i *ngIf="product.isFavorite" class="fa fa-star favorite"></i>
         <div class="product-image">
@@ -14,7 +17,6 @@
         </div>
         <button *ngIf="id < maxId" (click)="goProdact('next')">></button>
       </div>
-      <button (click)="goBack()">back to shop</button>
 </section>
 
 

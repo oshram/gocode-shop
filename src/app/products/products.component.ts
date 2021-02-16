@@ -42,8 +42,8 @@ export class ProductsComponent implements OnInit {
 
   onClick(product: Products): void {
     this.selectedProduct = product.id;
-    this.messageService.console(`ProductsComponent: Selected product id=${product.id}`);
-    this.messageService.dom(`${product.title} - Price: ${product.price}$ \n\n ${product.description}`);
+    this.messageService.add(`ProductsComponent: Selected product id=${product.id}`);
+    // this.messageService.dom(`${product.title} - Price: ${product.price}$ \n\n ${product.description}`);
   }
 
   private sortProduct(sortIndex : number){

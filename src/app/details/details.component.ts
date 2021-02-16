@@ -23,12 +23,15 @@ export class DetailsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.id = +this.route.snapshot.paramMap.get('id');
-    this.getProduct();
-    this.maxId = this.productService.productLength;
+    
+    this.route.params.subscribe(param =>{
+      this.id = +param.id;
+      this.getProduct();
+    });
   }
 
   getProduct(): void {
+    this.maxId = this.productService.productLength;
     this.productService.getProduct(this.id)
       .subscribe(product => this.product = product);
   }
@@ -40,9 +43,7 @@ export class DetailsComponent implements OnInit {
 
   goProdact(nav : string){
     this.id += (nav == "next" ? 1 : -1);
-    this.getProduct()
     this.router.navigate(['/details', this.id], {relativeTo: this.route});
-
   }
   
 }

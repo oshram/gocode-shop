@@ -1,5 +1,7 @@
 .product-card.one {
     flex-direction: unset;
+    margin-top: 10px;
+    cursor: unset;
 }
 
 h2{
@@ -25,4 +27,24 @@ h2{
 .product-card button{
     height: 30px;
     margin-top: auto;
+    cursor: pointer;
+}
+
+.backBtn{
+    padding: 2px;
+    width: 50px;
+    font-size: 14px;
+    background: #77818a;
+    color: white;
+    border: 1px solid #6a7279;
+    border-radius: 3px;
+    float: right;
+    cursor: pointer;
+}
+
+.link{
+    text-decoration: underline;
+    cursor: pointer;
+    color: rgb(37, 37, 94);
+    font-weight: bold;
 }
