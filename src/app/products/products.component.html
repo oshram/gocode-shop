@@ -1,6 +1,6 @@
 <section class="products">
     <ng-container *ngFor="let product of products">
-      <div (click)="onClick(product)" [class.selected]="product.id === selectedProduct" class="product-card" *ngIf="!filterByCategory || filterByCategory == product.category">
+      <div routerLink="/details/{{product.id}}" class="product-card" *ngIf="!filterByCategory || filterByCategory == product.category">
         <i *ngIf="product.isFavorite" class="fa fa-star favorite"></i>
         <div class="product-image">
           <img [src]="product.image"/>

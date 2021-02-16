@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
 import { MessageService } from '../message.service';
-import { Products } from "../products"
+import { Products } from "../products";
 import { SORTS } from '../mock-products';
 import { Sorts } from "../sort"
 import Utils from '../utils'
